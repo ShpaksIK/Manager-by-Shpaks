@@ -1,12 +1,7 @@
 ﻿"""
 
-Главный говно-код программы 'Manager'.
-Версия: 1.5
-К программе прилогаются:
-    manager.py
-    data.json
-    settings.json
-    sounds/*
+Код главного файла программы 'Manager by Shpaks'.
+Версия: 1.5.1
 Автор: Shpaks
 Copyright Manager by Shpaks | 2023
 
