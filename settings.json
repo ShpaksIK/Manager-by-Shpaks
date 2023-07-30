@@ -1,0 +1,16 @@
+{
+    "openai": {
+        "token": "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",
+        "token_2": "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"
+    },
+    "session": {
+        "name": "Shpaks",
+        "password": "123"
+    },
+    "color": "WHITE",
+    "bgcolor": "BLACK",
+    "scripts": [
+        "test1.py"
+    ],
+    "site_counter": 18
+}

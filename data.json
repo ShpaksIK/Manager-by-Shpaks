@@ -1,0 +1,191 @@
+{
+    "promocode": [
+        {
+            "name": "SHPAKS",
+            "money": 1000
+        }
+    ],
+    "id": [
+        {
+            "Shpaks": {
+                "id": 1,
+                "name": "Shpaks"
+            }
+        },
+        {
+            "testik": {
+                "id": 2,
+                "name": "testik"
+            }
+        },
+        {
+            "TimBr": {
+                "id": 3,
+                "name": "TimBr"
+            }
+        },
+        {
+            "test1": {
+                "id": 4,
+                "name": "test1"
+            }
+        },
+        {
+            "test10": {
+                "id": 5,
+                "name": "test10"
+            }
+        },
+        {
+            "Ponpon": {
+                "id": 6,
+                "name": "Ponpon"
+            }
+        },
+        {
+            "TIMA": {
+                "id": 7,
+                "name": "TIMA"
+            }
+        }
+    ],
+    "user": [
+        {
+            "name": "Shpaks",
+            "password": "123",
+            "id": 1,
+            "friends": [],
+            "friends_request": [],
+            "friends_your_request": [
+                2
+            ],
+            "ban": false,
+            "reason": "1",
+            "who_ban": "Shpaks",
+            "balance": 84371246,
+            "use_promocode": true,
+            "privileg": "\u0421\u043e\u0437\u0434\u0430\u0442\u0435\u043b\u044c",
+            "comm": 1799,
+            "reputation": 101,
+            "list": "1. \u0421\u0434\u0435\u043b\u0430\u0442\u044c \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 \u043d\u0430 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u0435 \u0444\u0430\u0439\u043b\u0430 \u0432 \u043a\u0430\u0442\u0430\u043b\u043e\u0433\u0435 loads 2. \u0418\u0441\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0431\u0430\u0433 \u0441 /timer",
+            "title": "background-color: Shpaks;",
+            "404": false
+        },
+        {
+            "name": "testik",
+            "password": "123",
+            "id": 2,
+            "friends": [],
+            "friends_request": [
+                1
+            ],
+            "friends_your_request": [],
+            "ban": false,
+            "reason": "\u043d\u0435\u0442 \u043f\u0440\u0438\u0447\u0438\u043d\u044b",
+            "who_ban": "No-Name",
+            "balance": 10000,
+            "use_promocode": false,
+            "privileg": "VIP+",
+            "comm": 41,
+            "reputation": 2,
+            "list": "",
+            "title": "\u042f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0434\u0430\u043d\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b. \u0414\u0430\u0432\u0430\u0439 \u0434\u0440\u0443\u0436\u0438\u0442\u044c",
+            "404": false
+        },
+        {
+            "name": "TimBr",
+            "password": "lox",
+            "id": 3,
+            "friends": [],
+            "friends_request": [],
+            "friends_your_request": [],
+            "ban": false,
+            "reason": "\u043d\u0435\u0442 \u043f\u0440\u0438\u0447\u0438\u043d\u044b",
+            "who_ban": "No-Name",
+            "balance": 10000,
+            "use_promocode": false,
+            "privileg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
+            "comm": 2,
+            "reputation": 0,
+            "list": "",
+            "title": "\u042f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0434\u0430\u043d\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b. \u0414\u0430\u0432\u0430\u0439 \u0434\u0440\u0443\u0436\u0438\u0442\u044c",
+            "404": false
+        },
+        {
+            "name": "test1",
+            "password": "t",
+            "id": 4,
+            "friends": [],
+            "friends_request": [],
+            "friends_your_request": [],
+            "ban": false,
+            "reason": "\u043d\u0435\u0442 \u043f\u0440\u0438\u0447\u0438\u043d\u044b",
+            "who_ban": "No-Name",
+            "balance": 100000,
+            "use_promocode": false,
+            "privileg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
+            "reputation": 0,
+            "comm": 12,
+            "list": "",
+            "title": "\u042f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0434\u0430\u043d\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b. \u0414\u0430\u0432\u0430\u0439 \u0434\u0440\u0443\u0436\u0438\u0442\u044c",
+            "404": false
+        },
+        {
+            "name": "test10",
+            "password": "t",
+            "id": 5,
+            "friends": [],
+            "friends_request": [],
+            "friends_your_request": [],
+            "ban": false,
+            "reason": "\u043d\u0435\u0442 \u043f\u0440\u0438\u0447\u0438\u043d\u044b",
+            "who_ban": "No-Name",
+            "balance": 10000,
+            "use_promocode": false,
+            "privileg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
+            "reputation": 0,
+            "comm": 2,
+            "list": "",
+            "title": "\u042f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0434\u0430\u043d\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b. \u0414\u0430\u0432\u0430\u0439 \u0434\u0440\u0443\u0436\u0438\u0442\u044c",
+            "404": false
+        },
+        {
+            "name": "Ponpon",
+            "password": "pon",
+            "id": 6,
+            "friends": [],
+            "friends_request": [],
+            "friends_your_request": [],
+            "ban": false,
+            "reason": "\u043d\u0435\u0442 \u043f\u0440\u0438\u0447\u0438\u043d\u044b",
+            "who_ban": "No-Name",
+            "balance": 10000,
+            "use_promocode": false,
+            "privileg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
+            "reputation": 0,
+            "comm": 0,
+            "list": "",
+            "title": "\u042f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0434\u0430\u043d\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b. \u0414\u0430\u0432\u0430\u0439 \u0434\u0440\u0443\u0436\u0438\u0442\u044c",
+            "404": false
+        },
+        {
+            "name": "TIMA",
+            "password": "TIMA",
+            "id": 7,
+            "friends": [],
+            "friends_request": [],
+            "friends_your_request": [],
+            "ban": false,
+            "reason": "\u043d\u0435\u0442 \u043f\u0440\u0438\u0447\u0438\u043d\u044b",
+            "who_ban": "No-Name",
+            "balance": 10000,
+            "use_promocode": false,
+            "privileg": "\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c",
+            "reputation": 0,
+            "comm": 0,
+            "list": "",
+            "title": "\u042f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c \u0434\u0430\u043d\u043d\u043e\u0439 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b. \u0414\u0430\u0432\u0430\u0439 \u0434\u0440\u0443\u0436\u0438\u0442\u044c",
+            "404": false
+        }
+    ]
+}
