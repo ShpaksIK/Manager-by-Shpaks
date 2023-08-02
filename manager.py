@@ -7,28 +7,30 @@ Copyright Manager by Shpaks | 2023
 
 """
 # Импорты
-from colorama import Fore, Back
-from pyfiglet import Figlet
-from threading import Thread
-from gtts import gTTS
-
 import colorama
-import folium
-import requests
-import time
 import datetime
-import random
-import os, sys
-import webbrowser
-import translate
 import json
+import os
+import platform
+import random
+import requests
+import sys
+import time
+import webbrowser
+from threading import Thread
+
+import asyncio
+import folium
+import gtts
+import importlib
 import openai
 import pygame
 import pyttsx3
 import subprocess
-import asyncio
-import platform
-import importlib
+import translate
+
+from colorama import Back, Fore
+from pyfiglet import Figlet
 
 
 # Инициализация библиотек
