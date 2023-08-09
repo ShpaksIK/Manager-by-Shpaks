@@ -17,6 +17,7 @@ import requests
 import sys
 import time
 import webbrowser
+import phonenumbers
 from threading import Thread
 
 import asyncio
@@ -47,7 +48,7 @@ def programm(nick):
     version = "1.5"
     running = True
     privileg = ["VIP", "VIP+", "Легенда", "Модератор", "Создатель"]
-    commands = ["/help", "/relist", "dellist", "/info", "/list", "/balance", "/bal", "/balance_user", "/spam", "/pay", "/retitle", "/update", "/randpass", "/yt", "/sear", "/bor", "/gdz", "/trr", "/tre", "/kazino", "/or", "/try", "/ac", "/ban", "/unban", "/banlist", "/404", "/deluser", "/color", "/reload", "/exit", "/clear", "/donate", "/promo", "/renick", "/changepassword", "/cp", "/logout", "/ya", "/google", "/give", "/give_balance", "/give_rep", "/give_perm", "/ip", "/addpromo", "/delpromo", "/rep", "/unrep", "/user", "/users", "/friends", "/friend_add", "/friend_del", "/friend_info", "/settings", "/settings_ai_token", "/settings_color", "/settings_bgcolor", "/gpt", "/timer", "/time", "/voice", "/wifi", "/course", "/block_site", "/scripts", "/add_script", "/del_script", "/load_script", "/create_script","/gpt_site"]
+    commands = ["/help", "/relist", "dellist", "/info", "/list", "/balance", "/bal", "/balance_user", "/spam", "/pay", "/retitle", "/update", "/randpass", "/yt", "/sear", "/bor", "/gdz", "/trr", "/tre", "/kazino", "/or", "/try", "/ac", "/ban", "/unban", "/banlist", "/404", "/deluser", "/color", "/reload", "/exit", "/clear", "/donate", "/promo", "/renick", "/changepassword", "/cp", "/logout", "/ya", "/google", "/give", "/give_balance", "/give_rep", "/give_perm", "/ip", "/addpromo", "/delpromo", "/rep", "/unrep", "/user", "/users", "/friends", "/friend_add", "/friend_del", "/friend_info", "/settings", "/settings_ai_token", "/settings_color", "/settings_bgcolor", "/gpt", "/timer", "/time", "/voice", "/wifi", "/course", "/block_site", "/scripts", "/add_script", "/del_script", "/load_script", "/create_script", "/gpt_site", "/phone"]
     reason_404 = None
     timer_active = False
     
@@ -216,6 +217,7 @@ def programm(nick):
                             print(" /time - узнать время (по МСК)")
                             print(" /timer - установить таймер")
                             print(" /voice - воспроизвести текст в речь")
+                            print(" /phone - узнать информацию о номере телефона")
                             print("РАЗВЛЕКАТЕЛЬНЫЕ КОМАНДЫ:")
                             print(" /kazino - игра в казино ")
                             print(" /or - орел или решка?")
@@ -1444,7 +1446,7 @@ def programm(nick):
                                 response = openai.Completion.create(
                                     engine='text-davinci-003',
                                     prompt=message,
-                                    max_tokens=3000,
+                                    max_tokens=2900,
                                     n=1,
                                     stop=None,
                                     temperature=0.7
@@ -1718,6 +1720,26 @@ def programm(nick):
                             else:
                                 file = os.open(f"loads/{create_script}.py", os.O_CREAT|os.O_RDWR)
                                 print("[/] Скрипт успешно создан! Редактируйте его командой /rescript")
+                                
+                        elif command == "/phone":
+                            from phonenumbers import carrier, geocoder, timezone
+                            number = input("Введите номер телефона: ")
+                            phoneNumber = phonenumbers.parse(number) 
+                            carrier = carrier.name_for_number(phoneNumber, 'ru')
+                            reg = geocoder.description_for_number(phoneNumber, 'ru') 
+                            timeZone = timezone.time_zones_for_number(phoneNumber)
+                            valid = phonenumbers.is_valid_number(phoneNumber)
+                            if valid:
+                                print("=============== ИНФОРМАЦИЯ О НОМЕРЕ ===============")
+                                print(f" Существует: {valid}")
+                                print(f" Оператор: {carrier}")
+                                print(f" Зарегистрирован: {reg}")
+                                print(" Часовые пояса:")
+                                for tz in timeZone:
+                                    print(f"  - {tz}")
+                                print("===================================================")
+                            else:
+                                print("[!] Данного номера не существует")
                         
                         else:
                             print("[!] Неизвестная комманда. Список команд: /help")
