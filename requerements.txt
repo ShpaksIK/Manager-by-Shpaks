@@ -13,3 +13,4 @@ pyttsx3
 asyncio
 platform
 importlib
+phonenumbers
