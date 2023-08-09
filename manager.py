@@ -45,7 +45,7 @@ engine.setProperty('voice',voices[0].id)
 # Основная функция программы
 def programm(nick):
     # Инициализания данных программы
-    version = "1.5"
+    version = "1.5.1"
     running = True
     privileg = ["VIP", "VIP+", "Легенда", "Модератор", "Создатель"]
     commands = ["/help", "/relist", "dellist", "/info", "/list", "/balance", "/bal", "/balance_user", "/spam", "/pay", "/retitle", "/update", "/randpass", "/yt", "/sear", "/bor", "/gdz", "/trr", "/tre", "/kazino", "/or", "/try", "/ac", "/ban", "/unban", "/banlist", "/404", "/deluser", "/color", "/reload", "/exit", "/clear", "/donate", "/promo", "/renick", "/changepassword", "/cp", "/logout", "/ya", "/google", "/give", "/give_balance", "/give_rep", "/give_perm", "/ip", "/addpromo", "/delpromo", "/rep", "/unrep", "/user", "/users", "/friends", "/friend_add", "/friend_del", "/friend_info", "/settings", "/settings_ai_token", "/settings_color", "/settings_bgcolor", "/gpt", "/timer", "/time", "/voice", "/wifi", "/course", "/block_site", "/scripts", "/add_script", "/del_script", "/load_script", "/create_script", "/gpt_site", "/phone"]
