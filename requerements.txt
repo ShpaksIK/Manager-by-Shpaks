@@ -1,16 +1,13 @@
 colorama
 pyfiglet
-threading
 gtts
 speedtest
 folium
 requests
-webbrowser
 translate
 openai
 pygame
 pyttsx3
 asyncio
-platform
 importlib
 phonenumbers

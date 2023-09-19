@@ -9,6 +9,8 @@
     },
     "color": "WHITE",
     "bgcolor": "BLACK",
-    "scripts": ["test1.py"],
-    "site_counter": 19
+    "scripts": [
+        "test1.py"
+    ],
+    "site_counter": 20
 }

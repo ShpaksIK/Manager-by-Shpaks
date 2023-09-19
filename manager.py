@@ -51,6 +51,7 @@ def programm(nick):
     commands = ["/help", "/relist", "dellist", "/info", "/list", "/balance", "/bal", "/balance_user", "/spam", "/pay", "/retitle", "/update", "/randpass", "/yt", "/sear", "/bor", "/gdz", "/trr", "/tre", "/kazino", "/or", "/try", "/ac", "/ban", "/unban", "/banlist", "/404", "/deluser", "/color", "/reload", "/exit", "/clear", "/donate", "/promo", "/renick", "/changepassword", "/cp", "/logout", "/ya", "/google", "/give", "/give_balance", "/give_rep", "/give_perm", "/ip", "/addpromo", "/delpromo", "/rep", "/unrep", "/user", "/users", "/friends", "/friend_add", "/friend_del", "/friend_info", "/settings", "/settings_ai_token", "/settings_color", "/settings_bgcolor", "/gpt", "/timer", "/time", "/voice", "/wifi", "/course", "/block_site", "/scripts", "/add_script", "/del_script", "/load_script", "/create_script", "/gpt_site", "/phone"]
     reason_404 = None
     timer_active = False
+    messages_cooldown_bool = False
     
     # Получение данных пользователя
     with open('data.json', 'r+', encoding='utf-8') as json_file:
@@ -312,7 +313,7 @@ def programm(nick):
                             print("[/] Запись успешно удалена")
                     
                         elif command == "/reload":
-                            file_path = r'C:\Users\Max\Desktop\Files\программирование\Python\Manager\manager.py'
+                            file_path = r'C:\Users\maksi\OneDrive\Рабочий стол\Files\программирование\Python\Manager\manager.py'
                             os.system("start "+file_path)
                             sys.exit("Перезагрузка...")
                         
@@ -1155,9 +1156,9 @@ def programm(nick):
                                             user_checked = True
                                             break
                                         user_id += 1
-                                        friends_count = 0
-                                        for friend in fd['user'][id-1]['friends']:
-                                            friends_count += 1
+                                    friends_count = 0
+                                    for friend in fd['user'][user_id]['friends']:
+                                        friends_count += 1
                                     if user_checked:
                                         with open('data.json', 'r', encoding='utf-8') as jf:
                                             fd = json.load(jf)
@@ -1741,12 +1742,30 @@ def programm(nick):
                             else:
                                 print("[!] Данного номера не существует")
                         
+                        elif command == "/calc":
+                            def calculate(expression):
+                                try:
+                                    result = eval(expression)
+                                    return result
+                                except Exception as e:
+                                    return "[!] Ошибка при вычислении"
+                            expression = input("Введите выражение для вычисления (/ex для отмены): ")
+                            if expression.lower() == "/ex":
+                                print("[/] Отменено")
+                                break
+                            result = calculate(expression)
+                            print("Результат: {}".format(result))
+                        
                         else:
                             print("[!] Неизвестная комманда. Список команд: /help")
                     else:
                         with open('data.json', 'r', encoding='utf-8') as jf:
                             fd = json.load(jf)
+                        # if messages_cooldown_bool is False:
+                            # messages_cooldown_bool = not messages_cooldown_bool
                         print(f"|Чат| {fd['user'][id-1]['privileg']} {nick} ({id}) написал -> {command}")
+                            # messages_cooldown_bool = False
+
             except Exception as e:
                 print("\nВозникла внутренняя ошибка")
                 with open('data.json', 'r', encoding='utf-8') as jf:
