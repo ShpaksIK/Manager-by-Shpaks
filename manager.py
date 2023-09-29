@@ -8,6 +8,7 @@ Copyright Manager by Shpaks | 2023
 """
 # Импорты
 import colorama
+import socket
 import datetime
 import json
 import os
@@ -41,6 +42,7 @@ os.system("cls")
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
+device_name = socket.gethostname()
 
 # Основная функция программы
 def programm(nick):
@@ -313,7 +315,7 @@ def programm(nick):
                             print("[/] Запись успешно удалена")
                     
                         elif command == "/reload":
-                            file_path = r'C:\Users\maksi\OneDrive\Рабочий стол\Files\программирование\Python\Manager\manager.py'
+                            file_path = r'C:\Users\Maks\OneDrive\Рабочий стол\Files\программирование\Python\Manager'
                             os.system("start "+file_path)
                             sys.exit("Перезагрузка...")
                         
@@ -1492,7 +1494,7 @@ def programm(nick):
                                     settings["site_counter"] += 1
                                     with open('settings.json','w', encoding='utf-8') as jf:
                                         json.dump(settings, jf, indent = 4)
-                                    result_input = f"Сделай одностраничный веб сайт на HTML, CSS и JavaScript с шапкой, кнопками с переходом на блоки, содержимым и подвалом (всё в одном файле). Сделай дизайн сайта в одном стиле (подбери подходящие цвета. Их может быть несколько, главное чтобы сочетались). Напиши содержимого побольше. Содержимым или темой сайта будет являться следующее: \"{user_input}\""
+                                    result_input = f"Сделай одностраничный веб сайт на HTML, CSS и JavaScript с шапкой, кнопками с переходом на блоки, содержимым, картинками и подвалом (всё в одном файле). Сделай дизайн сайта в одном стиле (подбери подходящие цвета. Их может быть несколько, главное чтобы сочетались). Напиши содержимого побольше. Содержимым или темой сайта будет являться следующее: \"{user_input}\""
                                     openai_response = get_openai_response(result_input)
                                     site_counter = settings["site_counter"]
                                     with open(f'sites/site{site_counter}.html', 'w', encoding='utf-8') as file:
@@ -1825,10 +1827,12 @@ except Exception as e:
 
 # Вход в аккаунт
 try:
+    attempt = 3
     def login():
+        global attempt
         with open('settings.json', 'r+', encoding='utf-8') as jf:
             settings = json.load(jf)
-        if settings['session']['name'] == "" and settings['session']['password'] == "":
+        if settings['session']['name'] == "" and settings['session']['password'] == "" or settings['device_name'] != device_name:
             def register():
                 user_in_file = False
                 print("Зарегистрируйтесь. Чтобы авторизироваться введите /login")
@@ -1890,51 +1894,58 @@ try:
                                 login()
                             else:
                                 register()
-            print("Авторизируйтесь. Чтобы зарегистрировться введите /reg")
-            nick = input("[АВТОРИЗАЦИЯ] Введите свой ник: ")
-            if nick == "/reg":
-                register()
-            else:
-                password = input("[АВТОРИЗАЦИЯ] Введите пароль: ")
-                check_user_profile = False
-
-                if nick == "" or password == "" or " " in nick or " " in password or "/" in nick or "{" in nick or "}" in nick or nick == "No-Name":
-                    print("[!] Никнейм или пароль содержит запрещённые символы")
-                    login()
+            if attempt > 0:
+                print("Авторизируйтесь. Чтобы зарегистрировться введите /reg")
+                nick = input("[АВТОРИЗАЦИЯ] Введите свой ник: ")
+                if nick == "/reg":
+                    register()
                 else:
-                    if len(nick) < 3 or len(nick) > 15:
-                        print("[!] Никнейм не должен быть менее 16 символов и более 2 символов")
+                    password = input("[АВТОРИЗАЦИЯ] Введите пароль: ")
+                    check_user_profile = False
+
+                    if nick == "" or password == "" or " " in nick or " " in password or "/" in nick or "{" in nick or "}" in nick or nick == "No-Name":
+                        print("[!] Никнейм или пароль содержит запрещённые символы")
                         login()
                     else:
-                        with open('data.json', 'r+', encoding='utf-8') as json_file:
-                            data = json.load(json_file)
-                        for user in data['user']:
-                            check_user = user['name']
-                            if nick == check_user:
-                                check_password = user['password']
-                                if password == check_password:
-                                    check_user_profile = True
-                                else:
-                                    print("[!] Неверный пароль")
-                                    login()
-                        if check_user_profile is False:
-                            print("[!] Такого пользователя не существует. Введите /reg для создания аккаунта")
+                        if len(nick) < 3 or len(nick) > 15:
+                            print("[!] Никнейм не должен быть менее 16 символов и более 2 символов")
                             login()
                         else:
-                            with open('settings.json', 'r', encoding='utf-8') as jf:
-                                settings = json.load(jf)
-                            settings['session']['name'] = nick
-                            settings['session']['password'] = password
-                            with open('settings.json', 'w') as jf:
-                                json.dump(settings, jf, indent=4)
-                            data = None
-                            os.system("cls")
-                            check_color()
-                            check_bgcolor()
-                            preview_text = Figlet(font='slant')
-                            print(preview_text.renderText('MANAGER'))
-                            print(f"=============================================================================================\n Добро пожаловать, {nick}, в консольную программу. Список команд ---> /help \n=============================================================================================")
-                            programm(nick)
+                            with open('data.json', 'r+', encoding='utf-8') as json_file:
+                                data = json.load(json_file)
+                            for user in data['user']:
+                                check_user = user['name']
+                                if nick == check_user:
+                                    check_password = user['password']
+                                    if password == check_password:
+                                        check_user_profile = True
+                                    else:
+                                        print("[!] Неверный пароль")
+                                        attempt -= 1
+                                        login()
+                            if check_user_profile is False:
+                                print("[!] Такого пользователя не существует. Введите /reg для создания аккаунта")
+                                login()
+                            else:
+                                with open('settings.json', 'r', encoding='utf-8') as jf:
+                                    settings = json.load(jf)
+                                settings['session']['name'] = nick
+                                settings['session']['password'] = password
+                                settings['device_name'] = device_name
+                                with open('settings.json', 'w') as jf:
+                                    json.dump(settings, jf, indent=4)
+                                data = None
+                                os.system("cls")
+                                check_color()
+                                check_bgcolor()
+                                preview_text = Figlet(font='slant')
+                                print(preview_text.renderText('MANAGER'))
+                                print(f"=============================================================================================\n Добро пожаловать, {nick}, в консольную программу. Список команд ---> /help \n=============================================================================================")
+                                programm(nick)
+            else:
+                print("[!] Попытки авторизироваться закончились! Попробуйте войти позже")
+                time.sleep(2)
+                sys.exit()
         else:
             os.system("cls")
             check_color()
