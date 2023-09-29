@@ -1,4 +1,4 @@
 manager.bat
-/sites/*
-/loads/*
+/sites
+/loads
 /__pycache__
