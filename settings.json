@@ -1,8 +1,8 @@
 {
-    "device_name": "DESKTOP-29I8J4M",
+    "device_name": "",
     "openai": {
-        "token": "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",
-        "token_2": "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"
+        "token": "",
+        "token_2": ""
     },
     "session": {
         "name": "",
@@ -11,5 +11,5 @@
     "color": "WHITE",
     "bgcolor": "BLACK",
     "scripts": [],
-    "site_counter": 21
+    "site_counter": 0
 }
