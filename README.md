@@ -37,7 +37,7 @@
 
 # :gift: Установка:
 * Windows:
-  * Скачайте самый новый Python [here](https://www.python.org/downloads/))
+  * Скачайте самый новый Python [здесь](https://www.python.org/downloads/)
   * Скачайте Manager-by-Shpaks
   * Откройте cmd или PowerShell и перейдите в директорию Manager-by-Shpaks
   * Запустите данную команду: `pip install -r requirements.txt`
