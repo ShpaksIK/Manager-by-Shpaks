@@ -25,8 +25,19 @@
 **Важно**
  - Чтобы использоват ChatGPT, вам нужно иметь токен для ChatGPT. Используйте команду /settings_ai_token.
 
+# Запуск
+перейдите в директорию программы
+введите pip install -r requirements.txt
+
 Разработчики: 
  - @ShpaksIK
 
 Языки:
  - Python
+
+# :gift: Установка:
+* Windows:
+  * Скачайте самый новый Python [здесь]([https://www.python.org/downloads/release/python-38](https://www.python.org/downloads/))
+  * Скачайте Manager-by-Shpaks
+  * Откройте cmd или PowerShell и перейдите в директорию Manager-by-Shpaks
+  * Запустите данную команду: `pip install -r requirements.txt`
